@@ -1,0 +1,4 @@
+# financial-hot-article 可选依赖：装进 skill 自带的 .venv（运行 setup.bat）
+# 不装也能用：A股行情、指数、板块、资金流、涨停池、K线、研报库、海外行情（Yahoo 直连）
+akshare>=1.19
+yfinance>=1.7
