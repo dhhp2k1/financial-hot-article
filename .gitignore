@@ -1,0 +1,11 @@
+/fha-runs/
+/.cache/
+/.claude/
+/.venv/
+/outputs/
+__pycache__/
+*.py[cod]
+*.log
+.env
+.env.*
+Thumbs.db
