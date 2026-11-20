@@ -31,6 +31,18 @@ financial-hot-article/
 
 如果目标位置已有同名文件夹，先改名备份（如 `financial-hot-article.bak`），不要覆盖。
 
+## GitHub 自动更新
+
+每次启动任务时会尝试运行 `python scripts/update.py`，从 `dhhp2k1/financial-hot-article` 的 main 分支检查并自动快进。需要 Git、网络和该私有仓库的读取权限；Git 使用现有本机凭据，不交互索取令牌。脚本只更新以该仓库为 origin 的独立 Git 安装，当前分支须为 main 且工作区干净；有本地改动、历史分叉、认证失败或连接超时时保留现有版本并提示。更新成功后重新读取 SKILL.md。
+
+解压包没有 Git 仓库信息，无法自行检查更新。要启用此功能，先备份已有目录，再用有权限的账户在所用 agent 的 skills 目录中执行：
+
+```bash
+git clone https://github.com/dhhp2k1/financial-hot-article.git
+```
+
+已有 Git 克隆可确认 origin 指向该仓库，且工作区已妥善保存。升级到包含本更新器的版本需要先手动同步一次；原本不含更新器的旧版不会自动发现它。可用 `python scripts/update.py` 单独测试；失败不影响已有功能。
+
 ## 3. 安装依赖
 
 依赖装在 skill 文件夹自带的 `.venv` 里，不改动系统 Python。
